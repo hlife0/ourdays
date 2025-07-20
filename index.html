@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Days</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Days</h1>
+        <div id="entries-container" class="entries-container">
+            <!-- Entries will be dynamically inserted here -->
+        </div>
+
+        <div class="add-entry-form">
+            <input type="text" id="entry-title" placeholder="A special day's title...">
+            <input type="date" id="entry-date">
+            <button id="add-entry-btn">Add Our Day</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="context-menu" class="context-menu">
+        <div class="context-menu-item" id="edit-title-option">Edit Title</div>
+        <div class="context-menu-item" id="edit-date-option">Edit Date</div>
+        <div class="context-menu-item" id="delete-option">Delete</div>
+    </div>
+</body>
+</html>

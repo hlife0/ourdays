@@ -1,0 +1,164 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #fdf6f6; /* Soft pink background */
+    color: #5d4037; /* Deep, warm brown for text */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23e8d7d7" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border: 1px solid #e8d7d7;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #c2185b; /* Romantic pink/maroon */
+    margin-bottom: 30px;
+}
+
+.entries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.entry {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #e91e63; /* Pink accent */
+}
+
+.entry:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.entry .days {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #e91e63;
+    margin-bottom: 10px;
+}
+
+.entry .title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #3e2723;
+}
+
+.entry .start-date {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.entry .delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #c2185b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    line-height: 28px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.entry:hover .delete-btn {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.add-entry-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 25px;
+    border-top: 1px dashed #e8d7d7;
+}
+
+.add-entry-form input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    flex: 1;
+    min-width: 200px;
+}
+
+.add-entry-form button {
+    padding: 14px 30px;
+    background: linear-gradient(45deg, #e91e63, #c2185b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Dancing Script', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-entry-form button:hover {
+    transform: scale(1.05);
+}
+
+.context-menu {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+    font-family: 'Playfair Display', serif;
+}
+
+.context-menu-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.context-menu-item:hover {
+    background-color: #fdf6f6;
+}
+
+.entry.editing {
+    border-left-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+.entry .title[contenteditable="true"] {
+    outline: 1px dashed #3498db;
+    padding: 5px;
+    border-radius: 4px;
+} 
